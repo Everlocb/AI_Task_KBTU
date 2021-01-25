@@ -290,62 +290,42 @@ NIL
 NIL
 1
 
-@#$#@#$#@
-# Task Allocation  
-
 ## WHAT IS IT?
 
-Solves a task allocation problem with the coalition formation algorithm from  
-
- * Onn Shehory and Sarit Kraus. [Methods for Task Allocation via Agent Coalition Formation](http://jmvidal.cse.sc.edu/lib/shehory98a.html). _Artificial Intelligence,_ May; 101(1-2):165--200, 1998.
+(a general understanding of what the model is trying to show or explain)
 
 ## HOW IT WORKS
 
-From the problem set description,
-
-There are num-skills (slider) available to the agents. Each agent (there are num-agents of them) is born with a my-skills vector which contains a number between 0 a 1 for each one of these skills. These vectors represent how well the agent can perform each one of the skills.
-
-There is also a breed of tasks, of which there are num-tasks. Each task has a requirements variable which is a vector of size num-skill where each entry is a number randomly chosen between 0 and max-need. 
-
-L is the list of all possible coalitions, and is found by each state adding the possible combinations of itself to the current sets in L, while pruning duplicates.  Since each member of a coalition will add itself, the number of duplicates increases linearly as the coalition size increases.  However, the code is direct and short.
-
-Once this initialization takes place, the v(S) is calculated by each agent for its related coalitions, i.e. all possible coalitions it can be involved with, against each task.  The v(S) are calculated during the find-coalition implementation instead of beforehand to cut down on global variables, since message-passing will take care of any agent's information needs.
-
-find-coalition is executed after setup.
+(what rules the agents use to create the overall behavior of the model)
 
 ## HOW TO USE IT
 
-To visualize the algorithm, links indicate an association between an agent and a task.  Tasks are in column formation on the right (Q1/Q4) hemisphere of the world; while, agents are arranged similarly on the left (Q2/Q3) hemisphere of the world.  
-
-Agents in the same coalition for a task will have the same color link connecting them to that specific task.
-
-The requirements and my-skills vectors are displayed in the output window to the right of the world.  
-
-The tasks show their coalition solution as their label.  The agents show their ID.
-
-The trace toggle will allow you to view the find-coalition algorithm in a step-by-step basis.  Expect alot of output for more than 3 agents or tasks.
+(how to use the model, including a description of each of the items in the Interface tab)
 
 ## THINGS TO NOTICE
 
-If the max-need of the tasks is set above the number of agents, the problem becomes super-additive.
+(suggested things for the user to notice while running the model)
 
 ## THINGS TO TRY
 
-Setting the max-need above the number of agents.
-
-Setting the mas-need to zero.
+(suggested things for the user to try to do (move sliders, switches, etc.) with the model)
 
 ## EXTENDING THE MODEL
 
-Performance analysis of the L constructor and find-coalition's max-arg (max-coalition in the implementation) for large agentsets.  Possible future pruning and optimization in these areas
+(suggested things to add or change in the Code tab to make the model more complicated, detailed, accurate, etc.)
+
+## NETLOGO FEATURES
+
+(interesting or unusual features of NetLogo that the model uses, particularly in the Code tab; or where workarounds were needed for missing features)
+
+## RELATED MODELS
+
+(models in the NetLogo Models Library and elsewhere which are of related interest)
 
 ## CREDITS AND REFERENCES
 
-William Wiles  
+(a reference to the model's URL on the web if it has one, as well as any other necessary credits, citations, and links)
 
-## CHANGES
-
-20100623
 @#$#@#$#@
 default
 true
