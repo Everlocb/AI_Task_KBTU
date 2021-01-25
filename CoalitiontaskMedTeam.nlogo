@@ -68,7 +68,7 @@ to-report build-list-randomly [ sz limit ]
 
   set lst []
   ifelse (limit <= 1)
-  [ repeat sz [ set lst lput (((random (limit * 100 - 1)) + 1) / 100) lst ] ] ;need to normalize if limit is less than 1
+  [ repeat sz [ set lst lput (((random (limit * 100 - 1)) + 1) / 100) lst ] ]
   [ repeat sz [ set lst lput (random limit) lst ] ]
   report lst
 end
@@ -123,7 +123,7 @@ to-report max-coalition [ c_lst work_i ]
 
   foreach c_lst [ ?1 ->
     set sum_vector []
-    repeat skill_amount [ set sum_vector lput 0 sum_vector ] ;reset summation vector
+    repeat skill_amount [ set sum_vector lput 0 sum_vector ]
 
     foreach ?1 [ ??1 ->
       set index 0
